@@ -5,6 +5,7 @@ public class Ball : MonoBehaviour {
 	private Paddle paddle;
 	
 	private bool hasStarted = false;
+	private bool canClick = true;
 	private Vector3 paddleToBallVector;
 	
 	// Use this for initialization
@@ -22,10 +23,11 @@ public class Ball : MonoBehaviour {
 		}
 		
 		//if mouse clciked down...
-		if(Input.GetMouseButtonDown(0)){
+		if(canClick && Input.GetMouseButtonDown(0)){
 			hasStarted = true;
 			//add velocity to ball from paddle to launch
 			this.rigidbody2D.velocity  = new Vector2(0,15);
+			canClick = false;
 		}
 		
 	}
