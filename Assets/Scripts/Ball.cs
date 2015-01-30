@@ -4,6 +4,7 @@ using System.Collections;
 public class Ball : MonoBehaviour {
 	private Paddle paddle;
 	
+	
 	private bool hasStarted = false;
 	private bool canClick = true;
 	private Vector3 paddleToBallVector;
@@ -30,5 +31,10 @@ public class Ball : MonoBehaviour {
 			canClick = false;
 		}
 		
+	}
+	void OnCollisionEnter2D(Collision2D collision){
+		if(hasStarted){
+			audio.Play();
+		}
 	}
 }
