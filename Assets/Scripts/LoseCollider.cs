@@ -16,5 +16,6 @@ public class LoseCollider : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D collision){
 		Debug.Log("Collision");
 		levelManager.LoadLevel("Lose Screen");
+		Brick.breakableCount = 0;
 	}
 }
